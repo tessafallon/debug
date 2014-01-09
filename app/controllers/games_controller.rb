@@ -15,9 +15,11 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(params[:games])
+    @game = Game.new(params[:game])
     if @game.save
       redirect_to @game
+    else
+      render 'new'
     end
   end
 end
